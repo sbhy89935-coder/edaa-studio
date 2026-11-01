@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDAA | وكالة إبداعية</title>
+<meta name="description" content="EDAA وكالة إبداعية لتصميم المواقع والتسويق الرقمي وبناء الهوية البصرية.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg:#0b0914;
+  --panel:#151225;
+  --purple:#8b5cf6;
+  --pink:#ec4899;
+  --white:#f8f7ff;
+  --muted:#aaa5bd;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Cairo',sans-serif;
+  background:var(--bg);
+  color:var(--white);
+  line-height:1.8;
+}
+a{text-decoration:none;color:inherit}
+button,input,textarea,select{font:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{
+  position:sticky;top:0;z-index:20;
+  background:#0b0914eF;
+  border-bottom:1px solid #ffffff12;
+  backdrop-filter:blur(15px);
+}
+.nav{
+  min-height:75px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;flex-wrap:wrap;
+}
+.logo{font-size:27px;font-weight:900;letter-spacing:2px}
+.logo span{color:var(--pink)}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{color:var(--muted);font-size:14px}
+nav a:hover{color:white}
+.btn{
+  display:inline-block;border:0;cursor:pointer;
+  padding:12px 22px;border-radius:12px;
+  color:white;font-weight:800;
+  background:linear-gradient(120deg,var(--purple),var(--pink));
+  transition:.25s;
+}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.12)}
+.btn-outline{background:transparent;border:1px solid #ffffff35}
+section{padding:85px 0}
+.hero{
+  min-height:610px;display:flex;align-items:center;
+  background:
+  radial-gradient(circle at 15% 30%,#8b5cf633,transparent 35%),
+  radial-gradient(circle at 85% 70%,#ec489922,transparent 35%);
+}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+.tag{
+  display:inline-block;padding:7px 15px;border-radius:30px;
+  color:#d8c6ff;background:#8b5cf622;
+  border:1px solid #8b5cf655;font-size:13px;
+}
+h1{font-size:clamp(38px,6vw,65px);line-height:1.35;margin:20px 0}
+.gradient{
+  background:linear-gradient(90deg,#b69aff,#ff77bd);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p,.muted{color:var(--muted)}
+.hero p{max-width:580px;margin-bottom:25px}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
+.visual{
+  min-height:330px;border:1px solid #ffffff20;border-radius:30px;
+  background:linear-gradient(145deg,#21163d,#171126);
+  display:grid;place-items:center;position:relative;overflow:hidden;
+}
+.visual:before,.visual:after{
+  content:"";position:absolute;border-radius:50%;
+  filter:blur(3px);opacity:.8;
+}
+.visual:before{width:210px;height:210px;background:#8b5cf6;top:-70px;right:-50px}
+.visual:after{width:170px;height:170px;background:#ec4899;bottom:-70px;left:-30px}
+.visual-inner{z-index:1;text-align:center}
+.visual-inner strong{font-size:65px;display:block}
+.visual-inner span{color:#d6c6ff}
+.section-head{text-align:center;margin-bottom:40px}
+.section-head h2{font-size:34px;margin-bottom:8px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  padding:25px;border-radius:20px;
+  background:var(--panel);border:1px solid #ffffff12;
+  transition:.25s;
+}
+.card:hover{transform:translateY(-6px);border-color:#9b76fa88}
+.card-icon{font-size:32px;margin-bottom:12px}
+.card h3{margin-bottom:8px}
+.card p{color:var(--muted);font-size:14px}
+.card button{margin-top:18px}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{
+  border-radius:20px;overflow:hidden;
+  background:var(--panel);border:1px solid #ffffff15;
+}
+.project-art{
+  min-height:170px;display:grid;place-items:center;
+  font-size:55px;background:linear-gradient(135deg,#39216a,#a13d80);
+}
+.project:nth-child(2) .project-art{background:linear-gradient(135deg,#124d58,#238d86)}
+.project:nth-child(3) .project-art{background:linear-gradient(135deg,#5b321d,#c17c35)}
+.project-info{padding:20px}
+.project-info p{color:var(--muted);font-size:14px}
+.project-info button{margin-top:12px}
+.about{
+  background:linear-gradient(120deg,#171127,#211332);
+  border-block:1px solid #ffffff12;
+}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.about h2{font-size:34px;margin-bottom:15px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.stat{padding:20px;background:#ffffff09;border-radius:16px;text-align:center}
+.stat strong{font-size:28px;color:#c5a9ff;display:block}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.price{background:var(--panel);padding:25px;border-radius:20px;border:1px solid #ffffff18}
+.price.featured{border-color:var(--purple);box-shadow:0 0 30px #8b5cf622}
+.price h3{font-size:21px}
+.price .amount{font-size:27px;font-weight:900;margin:12px 0;color:#c7adff}
+.price ul{list-style:none;color:var(--muted);font-size:14px;margin:15px 0}
+.price li{padding:5px 0}
+.price li:before{content:"✓ ";color:#d18cff}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px}
+.contact-box,.contact-form{
+  background:var(--panel);border:1px solid #ffffff15;
+  border-radius:20px;padding:25px;
+}
+.contact-box p{color:var(--muted);margin:12px 0}
+.contact-form input,.contact-form textarea,.contact-form select{
+  width:100%;padding:13px;margin:8px 0;
+  background:#0e0b19;border:1px solid #ffffff20;
+  color:white;border-radius:10px;outline:none;
+}
+.contact-form textarea{min-height:120px;resize:vertical}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--purple)}
+footer{padding:25px 0;text-align:center;color:var(--muted);border-top:1px solid #ffffff12}
+.whatsapp{
+  position:fixed;bottom:20px;left:20px;z-index:30;
+  width:58px;height:58px;border-radius:50%;
+  background:#20c765;color:white;display:grid;
+  place-items:center;font-size:28px;
+  box-shadow:0 5px 25px #20c76555;
+}
+.modal{
+  display:none;position:fixed;inset:0;z-index:50;
+  background:#000b;place-items:center;padding:18px;
+}
+.modal.show{display:grid}
+.modal-content{
+  width:min(480px,100%);background:#1a1529;
+  border:1px solid #ffffff25;border-radius:20px;padding:25px;
+  position:relative;
+}
+.modal-content h3{font-size:24px;margin-bottom:10px}
+.modal-content p{color:var(--muted);margin-bottom:20px}
+.close{
+  position:absolute;left:15px;top:10px;
+  background:none;border:0;color:white;font-size:27px;cursor:pointer;
+}
+@media(max-width:800px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .cards,.projects,.prices{grid-template-columns:1fr 1fr}
+  .visual{min-height:240px}
+}
+@media(max-width:520px){
+  .nav{justify-content:center;padding:12px 0}
+  nav{justify-content:center;gap:13px}
+  .cards,.projects,.prices{grid-template-columns:1fr}
+  section{padding:60px 0}
+  .hero{min-height:auto;padding:65px 0}
+  .section-head h2{font-size:28px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">EDAA<span>.</span></a>
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#services">خدماتنا</a>
+      <a href="#work">أعمالنا</a>
+      <a href="#about">من نحن</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+    <a class="btn" href="#contact">ابدأ مشروعك</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="tag">نصنع أفكارًا تصنع الفرق</span>
+      <h1>حوّل فكرتك إلى <span class="gradient">نجاح رقمي</span></h1>
+      <p>نساعدك على بناء حضور قوي على الإنترنت من خلال تصميم المواقع والتسويق الرقمي والهويات البصرية الإبداعية.</p>
+      <div class="hero-buttons">
+        <a class="btn" href="#contact">ابدأ مشروعك الآن</a>
+        <a class="btn btn-outline" href="#work">شاهد أعمالنا</a>
+      </div>
+    </div>
+    <div class="visual">
+      <div class="visual-inner">
+        <strong>✦</strong>
+        <span>Think Creative. Build Better.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <h2>خدماتنا</h2>
+      <p class="muted">كل ما تحتاجه لبناء مشروعك الرقمي</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">💻</div>
+        <h3>تصميم المواقع</h3>
+        <p>مواقع عصرية وسريعة ومتوافقة مع الهواتف.</p>
+        <button class="btn btn-outline" onclick="showDetails('تصميم المواقع','نصمم مواقع للشركات والمتاجر والمطاعم، بتصميم متجاوب وتجربة استخدام سهلة.')">اعرف المزيد</button>
+      </article>
+      <article class="card">
+        <div class="card-icon">📈</div>
+        <h3>التسويق الرقمي</h3>
+        <p>خطط تسويقية تساعد علامتك التجارية على الانتشار.</p>
+        <button class="btn btn-outline" onclick="showDetails('التسويق الرقمي','نساعدك في وضع خطة تسويق للمحتوى والإعلانات وتحسين حضور مشروعك على الإنترنت.')">اعرف المزيد</button>
+      </article>
+      <article class="card">
+        <div class="card-icon">🎨</div>
+        <h3>الهوية البصرية</h3>
+        <p>تصميمات تعبر عن شخصية مشروعك وتجعله مميزًا.</p>
+        <button class="btn btn-outline" onclick="showDetails('الهوية البصرية','نساعدك في تصميم شعار وألوان وخطوط وهوية متناسقة لمشروعك.')">اعرف المزيد</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <div class="section-head">
+      <h2>نماذج من أعمالنا</h2>
+      <p class="muted">أفكار إبداعية لمشروعات مختلفة</p>
+    </div>
+    <div class="projects">
+      <article class="project">
+        <div class="project-art">🍽️</div>
+        <div class="project-info">
+          <h3>موقع مطعم</h3>
+          <p>تصميم تجريبي لمطعم عصري.</p>
+          <button class="btn btn-outline" onclick="showDetails('موقع مطعم','نموذج تجريبي لصفحة مطعم تشمل عرض الأطباق وبيانات التواصل.')">عرض التفاصيل</button>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project-art">🛍️</div>
+        <div class="project-info">
+          <h3>متجر إلكتروني</h3>
+          <p>واجهة متجر لعرض المنتجات.</p>
+          <button class="btn btn-outline" onclick="showDetails('متجر إلكتروني','نموذج تجريبي لمتجر يعرض المنتجات والتصنيفات بطريقة منظمة.')">عرض التفاصيل</button>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project-art">🏢</div>
+        <div class="project-info">
+          <h3>موقع شركة</h3>
+          <p>واجهة احترافية للتعريف بالشركات.</p>
+          <button class="btn btn-outline" onclick="showDetails('موقع شركة','نموذج تعريفي لشركة يعرض خدماتها وفريقها ووسائل التواصل.')">عرض التفاصيل</button>
+        </div>
+      </article>
+    </div>
+    <p class="muted" style="text-align:center;margin-top:20px;font-size:13px">هذه نماذج تجريبية للعرض وليست أعمالًا منفذة لعملاء حقيقيين.</p>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div>
+      <span class="tag">من نحن</span>
+      <h2>نؤمن أن كل فكرة تستحق فرصة للنجاح</h2>
+      <p class="muted">EDAA وكالة إبداعية تهتم بتحويل الأفكار إلى تجارب رقمية واضحة وجذابة. هدفنا تقديم حلول تساعد المشروعات على النمو والتميز.</p>
+      <a class="btn" href="#contact" style="margin-top:20px">تواصل معنا</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>24/7</strong><span>تواصل مستمر</span></div>
+      <div class="stat"><strong>100%</strong><span>اهتمام بالتفاصيل</span></div>
+      <div class="stat"><strong>3</strong><span>خدمات أساسية</span></div>
+      <div class="stat"><strong>✦</strong><span>أفكار إبداعية</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="container">
+    <div class="section-head">
+      <h2>باقات الخدمات</h2>
+      <p class="muted">اختر الباقة المناسبة لمشروعك، والأسعار يتم تحديدها بعد معرفة التفاصيل.</p>
+    </div>
+    <div class="prices">
+      <article class="price">
+        <h3>الباقة الأساسية</h3>
+        <div class="amount">حسب الطلب</div>
+        <ul><li>صفحة تعريفية</li><li>تصميم متجاوب</li><li>وسائل تواصل</li></ul>
+        <button class="btn" onclick="choosePlan('الباقة الأساسية')">اطلب الباقة</button>
+      </article>
+      <article class="price featured">
+        <h3>باقة الأعمال</h3>
+        <div class="amount">حسب الطلب</div>
+        <ul><li>موقع متعدد الأقسام</li><li>تصميم مخصص</li><li>نموذج تواصل</li></ul>
+        <button class="btn" onclick="choosePlan('باقة الأعمال')">اطلب الباقة</button>
+      </article>
+      <article class="price">
+        <h3>الباقة المتقدمة</h3>
+        <div class="amount">حسب الطلب</div>
+        <ul><li>موقع مخصص</li><li>خصائص إضافية</li><li>دعم وتطوير</li></ul>
+        <button class="btn" onclick="choosePlan('الباقة المتقدمة')">اطلب الباقة</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <h2>خلينا نبدأ مشروعك</h2>
+      <p class="muted">اكتب بياناتك وسنجهز لك رسالة على واتساب.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-box">
+        <h3>تواصل معنا مباشرة</h3>
+        <p>📱 واتساب: 01097804256</p>
+        <p>💬 أرسل تفاصيل مشروعك وسنتواصل معك.</p>
+        <a class="btn" target="_blank" rel="noopener" href="https://wa.me/201097804256">افتح واتساب</a>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <input id="customerName" type="text" placeholder="اسمك" required>
+        <input id="customerPhone" type="tel" placeholder="رقم هاتفك" required>
+        <select id="service" required>
+          <option value="">اختر الخدمة المطلوبة</option>
+          <option>تصميم موقع</option>
+          <option>تسويق رقمي</option>
+          <option>هوية بصرية</option>
+          <option>خدمة أخرى</option>
+        </select>
+        <textarea id="customerMessage" placeholder="اكتب تفاصيل مشروعك..." required></textarea>
+        <button class="btn" type="submit">إرسال الطلب عبر واتساب</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 EDAA Agency — جميع الحقوق محفوظة</p>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/201097804256" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">☏</a>
+
+<div class="modal" id="detailsModal" onclick="closeOutside(event)">
+  <div class="modal-content">
+    <button class="close" onclick="closeModal()" aria-label="إغلاق">×</button>
+    <h3 id="modalTitle"></h3>
+    <p id="modalText"></p>
+    <a class="btn" href="#contact" onclick="closeModal()">اطلب الخدمة</a>
+  </div>
+</div>
+
+<script>
+const whatsappNumber = "201097804256";
+
+function showDetails(title, text) {
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modalText").textContent = text;
+  document.getElementById("detailsModal").classList.add("show");
+}
+
+function closeModal() {
+  document.getElementById("detailsModal").classList.remove("show");
+}
+
+function closeOutside(event) {
+  if (event.target.id === "detailsModal") closeModal();
+}
+
+function choosePlan(plan) {
+  document.getElementById("service").value = "تصميم موقع";
+  document.getElementById("customerMessage").value =
+    "أريد الاستفسار عن " + plan;
+  document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("customerName").value.trim();
+  const phone = document.getElementById("customerPhone").value.trim();
+  const service = document.getElementById("service").value;
+  const message = document.getElementById("customerMessage").value.trim();
+
+  if (!name || !phone || !service || !message) {
+    alert("من فضلك أكمل جميع البيانات.");
+    return;
+  }
+
+  const text =
+    "مرحبًا EDAA، لدي طلب جديد:%0A" +
+    "الاسم: " + encodeURIComponent(name) + "%0A" +
+    "رقم الهاتف: " + encodeURIComponent(phone) + "%0A" +
+    "الخدمة: " + encodeURIComponent(service) + "%0A" +
+    "التفاصيل: " + encodeURIComponent(message);
+
+  window.open("https://wa.me/" + whatsappNumber + "?text=" + text, "_blank");
+});
+</script>
+
+</body>
+</html>
